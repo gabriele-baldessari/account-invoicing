@@ -39,16 +39,16 @@ Contributors
 Lorenzo Battistini <lorenzo.battistini@agilebg.com>
 Leonardo Pistone <leonardo.pistone@camptocamp.com>
 Franco Tampieri <franco@tampieri.info>
+Gabriele Baldessari <gabriele.baldessari@gmail.com>
 """,
     'author': "Agile Business Group,Odoo Community Association (OCA)",
     'website': 'http://www.agilebg.com',
     'license': 'AGPL-3',
     "depends": ['account_move_template'],
     "data": [
-        'invoice_template.xml',
+        'views/invoice_template.xml',
         'wizard/select_template.xml',
         'security/ir.model.access.csv',
     ],
     "active": False,
-    "installable": False
 }

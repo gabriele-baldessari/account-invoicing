@@ -1,25 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
-
+<odoo>
         <record id="wizard_select_template" model="ir.ui.view">
             <field name="name">Select Invoice Template</field>
             <field name="model">wizard.select.invoice.template</field>
             <field name="arch" type="xml">
-                <form string="Invoice Template" >
-                    <group col="2" width="600" height="500">
-                        <group>
-                            <field name="template_id" colspan="2" attrs="{'invisible':[('state','=','template_selected')]}"/>
-                            <field name="line_ids" colspan="2" nolabel="1" attrs="{'invisible':[('state','!=','template_selected')]}"/>
-                            <field name="state" invisible="1"/>
-                        </group>
-                        <newline/>
-                        <group col="3">
-                            <button icon="gtk-cancel" special="cancel" string="Cancel" colspan="1"/>
-                            <button icon="gtk-ok" name="load_template" string="Load" type="object" colspan="1" attrs="{'invisible':[('state','!=','template_selected')]}" />
-                            <button name="load_lines" string="Next" icon="terp-gtk-go-back-rtl" type="object" colspan="1" attrs="{'invisible':[('state','=','template_selected')]}" />
-                        </group>
-                    </group>
+                <form string="Invoice Template">
+                            <group>
+                                <field name="template_id" colspan="2" attrs="{'invisible':[('state','=','template_selected')]}"/>
+                                <field name="line_ids" colspan="2" nolabel="1" attrs="{'invisible':[('state','!=','template_selected')]}"/>
+                                <field name="state" invisible="1"/>
+                            </group>
+                        <footer>
+                            <button special="cancel" string="Cancel" colspan="1"/>
+                            <button name="load_template" string="Load" type="object" colspan="1" attrs="{'invisible':[('state','!=','template_selected')]}" />
+                            <button name="load_lines" string="Next" type="object" colspan="1" attrs="{'invisible':[('state','=','template_selected')]}" />
+                        </footer>
                 </form>
             </field>
         </record>
@@ -29,12 +24,14 @@
             <field name="model">wizard.select.invoice.template.line</field>
             <field name="arch" type="xml">
                 <form string="Invoice Template Line">
-                    <group col="2">
-                        <field name="sequence" invisible="1"/>
-                        <field name="name" />
-                        <field name="account_id" />
-                        <field name="amount" />
-                    </group>
+                    <sheet>
+                        <group col="2">
+                            <field name="sequence" invisible="1"/>
+                            <field name="name" />
+                            <field name="account_id" />
+                            <field name="amount" />
+                        </group>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -57,8 +54,8 @@
             <field name="res_model">wizard.select.invoice.template</field>
             <field name="view_type">form</field>
             <field name="view_mode">form</field>
-               <field name="view_id" ref="wizard_select_template"/>
-               <field name="target">new</field>
+            <field name="view_id" ref="wizard_select_template"/>
+            <field name="target">new</field>
         </record>
 
        <act_window name="Create Invoice from Template"
@@ -70,6 +67,5 @@
             id="action_wizard_select_template_by_invoice"
             view_id="wizard_select_template"/>
 
-        <menuitem name="Create Invoice from Template" action="action_wizard_select_template" id="menu_action_wizard_select_template" sequence="10" parent="account.menu_finance_recurrent_entries"/>
-    </data>
-</openerp>
+        <menuitem name="Create Invoice from Template" action="action_wizard_select_template" id="menu_action_wizard_select_template" sequence="10" parent="account_invoice_template.menu_invoice_templating"/>
+</odoo>

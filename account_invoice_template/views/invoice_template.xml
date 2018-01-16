@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<openerp>
-    <data>
+<odoo>
 
         <record id="view_invoice_template_line_tree" model="ir.ui.view">
             <field name="name">account.invoice.template.line.tree</field>
@@ -24,16 +23,26 @@
             <field name="model">account.invoice.template.line</field>
             <field name="arch" type="xml">
                 <form string="Invoice Template Line">
-                    <field name="product_id" on_change="product_id_change(product_id, parent.type)"/>
-                    <field name="name" select="1"/>
-                    <field name="sequence"/>
-                    <field name="account_id" />
-                    <field name="analytic_account_id" groups="analytic.group_analytic_accounting"/>
-                    <field name="type"/>
-                    <separator string="Python Code" colspan="4"/>
-                    <field name="python_code" colspan="4" attrs="{'readonly': [('type', '!=', 'computed')]}" nolabel="1"/>
-                    <label string="You can refer to other lines using their sequence number (e.g. 'L(1)' for first line). Examples of code: 'L(1) * 0.2'; 'L(2) - L(1)'; 'L(1) + L(2) + L(3)'; '1250'" colspan="4"/>
-                    <field name="invoice_line_tax_id" colspan="4"  nolabel="1"/>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="product_id"/>
+                                <field name="name" select="1"/>
+                                <field name="sequence"/>
+                            </group>
+                            <group>
+                                <field name="account_id" />
+                                <field name="analytic_account_id" groups="analytic.group_analytic_accounting"/>
+                                <field name="type"/>
+                            </group>
+                            <div attrs="{'readonly': [('type', '!=', 'computed')], 'invisible': [('type', '!=', 'computed')]}">
+                                <separator string="Python Code" colspan="4"/>
+                                <field name="python_code" colspan="4" nolabel="1"/>
+                                <label string="You can refer to other lines using their sequence number (e.g. 'L(1)' for first line). Examples of code: 'L(1) * 0.2'; 'L(2) - L(1)'; 'L(1) + L(2) + L(3)'; '1250'" colspan="4"/>
+                            </div>
+                            <field name="invoice_line_tax_id" colspan="4"  nolabel="1"/>
+                        </group>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -43,11 +52,19 @@
             <field name="model">account.invoice.template</field>
             <field name="arch" type="xml">
                 <form string="Invoice Template">
-                    <field name="name"/>
-                    <field name="partner_id"/>
-                    <field name="account_id" />
-                    <field name="type" />
-                    <field colspan="4" nolabel="1" name="template_line_ids"/>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="partner_id"/>
+                            </group>
+                            <group>
+                                <field name="account_id" />
+                                <field name="type" />
+                            </group>
+                            <field colspan="4" nolabel="1" name="template_line_ids"/>
+                        </group>
+                    </sheet>
                 </form>
             </field>
         </record>
@@ -91,8 +108,8 @@
             <field name="view_mode">tree,form</field>
             <field name="search_view_id" ref="view_invoice_template_search"/>
         </record>
+        <menuitem name="Invoice Templates" id="menu_invoice_templating" sequence="3" parent="account.menu_finance"/>
         <menuitem
             action="action_invoice_template_form" id="menu_action_invoice_template_form" sequence="5"
-            parent="account.menu_configuration_misc" groups="account.group_account_manager"/>
-    </data>
-</openerp>
+            parent="menu_invoice_templating" groups="account.group_account_manager"/>
+</odoo>

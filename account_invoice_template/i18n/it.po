@@ -1,27 +1,60 @@
-# Translation of OpenERP Server.
+# Translation of Odoo Server.
 # This file contains the translation of the following modules:
 #	* account_invoice_template
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: OpenERP Server 6.0.3\n"
-"Report-Msgid-Bugs-To: support@openerp.com\n"
-"POT-Creation-Date: 2011-10-31 16:49+0000\n"
-"PO-Revision-Date: 2014-02-01 04:48+0000\n"
-"Last-Translator: Lorenzo Battistini - Agile BG "
-"<lorenzo.battistini@agilebg.com>\n"
+"Project-Id-Version: Odoo Server 10.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-01-16 09:18+0000\n"
+"PO-Revision-Date: 2018-01-16 09:18+0000\n"
+"Last-Translator: <>\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
-"X-Launchpad-Export-Date: 2014-03-21 06:54+0000\n"
-"X-Generator: Launchpad (build 16967)\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
 
 #. module: account_invoice_template
-#: selection:account.invoice.template,type:0
-#: selection:wizard.select.invoice.template.line,type:0
-msgid "Customer Refund"
-msgstr "Nota di credito"
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_account_id
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_line_account_id
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_line_account_id
+msgid "Account"
+msgstr "Conto"
+
+#. module: account_invoice_template
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_line_amount
+msgid "Amount"
+msgstr "Importo"
+
+#. module: account_invoice_template
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_line_analytic_account_id
+msgid "Analytic Account"
+msgstr "Conto Analitico"
+
+#. module: account_invoice_template
+#: code:addons/account_invoice_template/wizard/select_template.py:84
+#: code:addons/account_invoice_template/wizard/select_template.py:93
+#, python-format
+msgid "At least one amount has to be non-zero!"
+msgstr "Almeno un importo deve essere diverso da zero!"
+
+#. module: account_invoice_template
+#: model:ir.ui.view,arch_db:account_invoice_template.wizard_select_template
+msgid "Cancel"
+msgstr "Annulla"
+
+#. module: account_invoice_template
+#: code:addons/account_invoice_template/wizard/select_template.py:203
+#, python-format
+msgid "Cannot find a chart of accounts for this company, you should create one."
+msgstr "E' necessario creare un piano dei conti per l'azienda selezionata."
+
+#. module: account_invoice_template
+#: code:addons/account_invoice_template/wizard/select_template.py:202
+#, python-format
+msgid "Configuration Error!"
+msgstr "Errore di Configurazione!"
 
 #. module: account_invoice_template
 #: model:ir.actions.act_window,name:account_invoice_template.action_wizard_select_template_by_invoice
@@ -30,115 +63,153 @@ msgid "Create Invoice from Template"
 msgstr "Crea fattura da template"
 
 #. module: account_invoice_template
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_create_uid
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_line_create_uid
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_create_uid
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_line_create_uid
+msgid "Created by"
+msgstr "Creato da"
+
+#. module: account_invoice_template
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_create_date
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_line_create_date
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_create_date
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_line_create_date
+msgid "Created on"
+msgstr "Creato il"
+
+#. module: account_invoice_template
 #: selection:account.invoice.template,type:0
-#: selection:wizard.select.invoice.template.line,type:0
 msgid "Customer Invoice"
 msgstr "Fattura cliente"
 
 #. module: account_invoice_template
-#: model:ir.model,name:account_invoice_template.model_account_invoice_template_line
-msgid "account.invoice.template.line"
-msgstr "account.invoice.template.line"
-
-#. module: account_invoice_template
-#: field:account.invoice.template.line,sequence:0
-#: field:wizard.select.invoice.template.line,sequence:0
-msgid "Number"
-msgstr "Numero"
-
-#. module: account_invoice_template
 #: selection:account.invoice.template,type:0
-#: selection:wizard.select.invoice.template.line,type:0
-msgid "Supplier Invoice"
-msgstr "Fattura fornitore"
+msgid "Customer Refund"
+msgstr "Nota di credito"
 
 #. module: account_invoice_template
-#: field:account.invoice.template.line,template_id:0
-#: field:wizard.select.invoice.template.line,template_id:0
-msgid "Template"
-msgstr "Template"
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_display_name
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_line_display_name
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_display_name
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_line_display_name
+msgid "Display Name"
+msgstr "Nome Visualizzato"
 
 #. module: account_invoice_template
-#: field:account.invoice.template,type:0
-#: field:account.invoice.template.line,type:0
-#: field:wizard.select.invoice.template.line,type:0
-msgid "Type"
-msgstr "Tipo"
-
-#. module: account_invoice_template
-#: model:ir.model,name:account_invoice_template.model_account_invoice_template
-msgid "account.invoice.template"
-msgstr "account.invoice.template"
-
-#. module: account_invoice_template
-#: model:ir.model,name:account_invoice_template.model_wizard_select_invoice_template
-msgid "wizard.select.invoice.template"
-msgstr "wizard.select.invoice.template"
-
-#. module: account_invoice_template
-#: code:addons/account_invoice_template/wizard/select_template.py:66
+#: code:addons/account_invoice_template/wizard/select_template.py:83
+#: code:addons/account_invoice_template/wizard/select_template.py:92
 #, python-format
 msgid "Error !"
 msgstr "Errore !"
 
 #. module: account_invoice_template
-#: selection:account.invoice.template.line,type:0
-msgid "User input"
-msgstr "Input utente"
+#: model:ir.ui.view,arch_db:account_invoice_template.view_invoice_template_search
+msgid "Group By..."
+msgstr "Raggruppa per..."
 
 #. module: account_invoice_template
-#: view:account.invoice.template.line:0
-#: view:wizard.select.invoice.template.line:0
-msgid "Invoice Template Line"
-msgstr "Riga template fattura"
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_id
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_line_id
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_id
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_line_id
+msgid "ID"
+msgstr "ID"
 
 #. module: account_invoice_template
-#: field:account.invoice.template,account_id:0
-#: field:account.invoice.template.line,account_id:0
-#: field:wizard.select.invoice.template.line,account_id:0
-msgid "Account"
-msgstr "Conto"
+#: model:ir.model,name:account_invoice_template.model_account_invoice
+msgid "Invoice"
+msgstr "Fattura"
 
 #. module: account_invoice_template
-#: field:account.invoice.template,name:0
-#: field:account.invoice.template.line,name:0
-#: field:wizard.select.invoice.template.line,name:0
-msgid "Name"
-msgstr "Nome"
-
-#. module: account_invoice_template
-#: field:wizard.select.invoice.template,line_ids:0
-msgid "Lines"
-msgstr "Righe"
-
-#. module: account_invoice_template
-#: field:account.invoice.template.line,invoice_line_tax_id:0
-msgid "Taxes"
-msgstr "Imposte"
-
-#. module: account_invoice_template
-#: code:addons/account_invoice_template/wizard/select_template.py:66
-#, python-format
-msgid "At least one amount has to be non-zero!"
-msgstr "Almeno un importo deve essere diverso da zero!"
-
-#. module: account_invoice_template
-#: field:wizard.select.invoice.template.line,amount:0
-msgid "Amount"
-msgstr "Importo"
-
-#. module: account_invoice_template
-#: view:account.invoice.template:0
-#: view:wizard.select.invoice.template:0
-#: field:wizard.select.invoice.template,template_id:0
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_template_id
+#: model:ir.ui.view,arch_db:account_invoice_template.view_invoice_template_form
+#: model:ir.ui.view,arch_db:account_invoice_template.view_invoice_template_search
+#: model:ir.ui.view,arch_db:account_invoice_template.view_invoice_template_tree
+#: model:ir.ui.view,arch_db:account_invoice_template.wizard_select_template
 msgid "Invoice Template"
 msgstr "Template fattura"
 
 #. module: account_invoice_template
-#: selection:account.invoice.template,type:0
-#: selection:wizard.select.invoice.template.line,type:0
-msgid "Supplier Refund"
-msgstr "Reso a fornitore"
+#: model:ir.ui.view,arch_db:account_invoice_template.view_invoice_template_line_form
+#: model:ir.ui.view,arch_db:account_invoice_template.view_invoice_template_line_tree
+#: model:ir.ui.view,arch_db:account_invoice_template.wizard_select_template_line
+#: model:ir.ui.view,arch_db:account_invoice_template.wizard_select_template_line_tree
+msgid "Invoice Template Line"
+msgstr "Riga template fattura"
+
+#. module: account_invoice_template
+#: model:ir.actions.act_window,name:account_invoice_template.action_invoice_template_form
+#: model:ir.ui.menu,name:account_invoice_template.menu_action_invoice_template_form
+#: model:ir.ui.menu,name:account_invoice_template.menu_invoice_templating
+msgid "Invoice Templates"
+msgstr "Template fatture"
+
+#. module: account_invoice_template
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template___last_update
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_line___last_update
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template___last_update
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_line___last_update
+msgid "Last Modified on"
+msgstr "Ultima modifica il"
+
+#. module: account_invoice_template
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_line_write_uid
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_write_uid
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_line_write_uid
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_write_uid
+msgid "Last Updated by"
+msgstr "Ultima modifica di"
+
+#. module: account_invoice_template
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_line_write_date
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_write_date
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_line_write_date
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_write_date
+msgid "Last Updated on"
+msgstr "Ultima modifica il"
+
+#. module: account_invoice_template
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_line_ids
+msgid "Lines"
+msgstr "Righe"
+
+#. module: account_invoice_template
+#: model:ir.ui.view,arch_db:account_invoice_template.wizard_select_template
+msgid "Load"
+msgstr "Carica"
+
+#. module: account_invoice_template
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_line_name
+msgid "Name"
+msgstr "Nome"
+
+#. module: account_invoice_template
+#: model:ir.ui.view,arch_db:account_invoice_template.wizard_select_template
+msgid "Next"
+msgstr "Avanti"
+
+#. module: account_invoice_template
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_line_sequence
+msgid "Number"
+msgstr "Numero"
+
+#. module: account_invoice_template
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_partner_id
+#: model:ir.ui.view,arch_db:account_invoice_template.view_invoice_template_search
+msgid "Partner"
+msgstr "Partner"
+
+#. module: account_invoice_template
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_line_product_id
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_line_product_id
+msgid "Product"
+msgstr "Prodotto"
+
+#. module: account_invoice_template
+#: model:ir.ui.view,arch_db:account_invoice_template.view_invoice_template_line_form
+msgid "Python Code"
+msgstr "Codice python"
 
 #. module: account_invoice_template
 #: model:ir.actions.act_window,name:account_invoice_template.action_wizard_select_template
@@ -146,66 +217,84 @@ msgid "Select Invoice Template"
 msgstr "Scegli template fattura"
 
 #. module: account_invoice_template
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_state
+msgid "State"
+msgstr "Stato"
+
+#. module: account_invoice_template
+#: selection:account.invoice.template,type:0
+msgid "Supplier Invoice"
+msgstr "Fattura fornitore"
+
+#. module: account_invoice_template
+#: selection:account.invoice.template,type:0
+msgid "Supplier Refund"
+msgstr "Reso a fornitore"
+
+#. module: account_invoice_template
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_line_invoice_line_tax_id
+msgid "Taxes"
+msgstr "Imposte"
+
+#. module: account_invoice_template
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_line_template_id
+#: model:ir.model.fields,field_description:account_invoice_template.field_wizard_select_invoice_template_line_template_id
+msgid "Template"
+msgstr "Template"
+
+#. module: account_invoice_template
+#: model:ir.model,name:account_invoice_template.model_wizard_select_invoice_template_line
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_template_line_ids
+msgid "Template Lines"
+msgstr "Righe template"
+
+#. module: account_invoice_template
+#: selection:wizard.select.invoice.template,state:0
+msgid "Template selected"
+msgstr "Template Selezionato"
+
+#. module: account_invoice_template
 #: sql_constraint:account.invoice.template.line:0
 msgid "The sequence of the line must be unique per template !"
 msgstr "Il numero della riga deve essere unico per template!"
 
 #. module: account_invoice_template
-#: view:wizard.select.invoice.template:0
-msgid "Load"
-msgstr "Carica"
+#: model:ir.model.fields,field_description:account_invoice_template.field_account_invoice_template_type
+msgid "Type"
+msgstr "Tipo"
 
 #. module: account_invoice_template
-#: view:account.invoice.template.line:0
-msgid ""
-"You can refer to other lines using their sequence number (e.g. 'L(1)' for "
-"first line). Examples of code: 'L(1) * 0.2'; 'L(2) - L(1)'; 'L(1) + L(2) + "
-"L(3)'; '1250'"
-msgstr ""
-"E' possibile fare riferimento alle altre righe usando il loro numero (ad es. "
-"'L(1)' rappresenta la prima riga). Esempi di codice: 'L(1) * 0.2'; 'L(2) - "
-"L(1)'; 'L(1) + L(2) + L(3)'; '1250'"
+#: code:addons/account_invoice_template/models/account_move_template.py:22
+#, python-format
+msgid "You can not add a different number of lines in this wizard you should try to create the move normally and then edit the created move. Inconsistent between input lines and  filled lines for template %s"
+msgstr "You can not add a different number of lines in this wizard you should try to create the move normally and then edit the created move. Inconsistent between input lines and  filled lines for template %s"
 
 #. module: account_invoice_template
-#: selection:account.invoice.template.line,type:0
-msgid "Computed"
-msgstr "Calcolato"
+#: model:ir.ui.view,arch_db:account_invoice_template.view_invoice_template_line_form
+msgid "You can refer to other lines using their sequence number (e.g. 'L(1)' for first line). Examples of code: 'L(1) * 0.2'; 'L(2) - L(1)'; 'L(1) + L(2) + L(3)'; '1250'"
+msgstr "E' possibile fare riferimento alle altre righe usando il loro numero (ad es. 'L(1)' rappresenta la prima riga). Esempi di codice: 'L(1) * 0.2'; 'L(2) - L(1)'; 'L(1) + L(2) + L(3)'; '1250'"
 
 #. module: account_invoice_template
-#: view:account.invoice.template:0
-msgid "Group By..."
-msgstr "Raggruppa per..."
+#: model:ir.model,name:account_invoice_template.model_account_document_template
+msgid "account.document.template"
+msgstr "account.document.template"
 
 #. module: account_invoice_template
-#: view:account.invoice.template.line:0
-#: field:account.invoice.template.line,python_code:0
-msgid "Python Code"
-msgstr "Codice python"
+#: model:ir.model,name:account_invoice_template.model_account_document_template_line
+msgid "account.document.template.line"
+msgstr "account.document.template.line"
 
 #. module: account_invoice_template
-#: model:ir.actions.act_window,name:account_invoice_template.action_invoice_template_form
-#: model:ir.ui.menu,name:account_invoice_template.menu_action_invoice_template_form
-msgid "Invoice Templates"
-msgstr "Template fatture"
+#: model:ir.model,name:account_invoice_template.model_account_invoice_template
+msgid "account.invoice.template"
+msgstr "account.invoice.template"
 
 #. module: account_invoice_template
-#: field:account.invoice.template.line,analytic_account_id:0
-msgid "Analytic Account"
-msgstr "Conto analitico"
+#: model:ir.model,name:account_invoice_template.model_account_invoice_template_line
+msgid "account.invoice.template.line"
+msgstr "account.invoice.template.line"
 
 #. module: account_invoice_template
-#: field:account.invoice.template,template_line_ids:0
-#: model:ir.model,name:account_invoice_template.model_wizard_select_invoice_template_line
-msgid "Template Lines"
-msgstr "Righe template"
-
-#. module: account_invoice_template
-#: view:wizard.select.invoice.template:0
-msgid "Cancel"
-msgstr "Annulla"
-
-#. module: account_invoice_template
-#: view:account.invoice.template:0
-#: field:account.invoice.template,partner_id:0
-msgid "Partner"
-msgstr "Partner"
+#: model:ir.model,name:account_invoice_template.model_wizard_select_invoice_template
+msgid "wizard.select.invoice.template"
+msgstr "wizard.select.invoice.template"
