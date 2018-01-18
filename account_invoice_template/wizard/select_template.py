@@ -162,7 +162,6 @@ class AccountInvoice(models.Model):
 
         opt = [('uid', self.env.uid)]
         if partner_id:
-
             opt.insert(0, ('id', partner_id))
             p = self.env['res.partner'].browse(partner_id)
             if self.company_id:
@@ -190,7 +189,6 @@ class AccountInvoice(models.Model):
                     pay_line_data = property_obj.read(
                         pay_pro_id,
                         ['name', 'value_reference', 'res_id'])
-
                     rec_res_id = rec_line_data and rec_line_data[0].get(
                         'value_reference', False) and \
                         int(rec_line_data[0]['value_reference'].split(',')[1]) or False

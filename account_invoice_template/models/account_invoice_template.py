@@ -31,12 +31,10 @@ class AccountInvoiceTemplate(models.Model):
         'res.partner',
         'Partner',
         required=True)
-
     account_id = fields.Many2one(
         'account.account',
         'Account',
         required=True)
-
     template_line_ids = fields.One2many(
         'account.invoice.template.line',
         'template_id',
@@ -68,10 +66,7 @@ class AccountInvoiceTemplateLine(models.Model):
         comodel_name='account.tax',
         relation='account_invoice_template_line_tax',
         column1='invoice_line_id',
-        column2='tax_id',
-        # TODO Port Domain
-        # domain=[('parent_id', '=', False)]
-        )
+        column2='tax_id')
     template_id = fields.Many2one(
         'account.invoice.template',
         'Template',
@@ -88,7 +83,6 @@ class AccountInvoiceTemplateLine(models.Model):
         result = {}
         if not self.product_id:
             return {}
-
         product = self.product_id
         # name
         result.update({'name': product.name})
@@ -102,10 +96,8 @@ class AccountInvoiceTemplateLine(models.Model):
             account_id = product.product_tmpl_id.property_account_expense_id.id
             if not account_id:
                 account_id = product.categ_id.property_account_expense_categ_id.id
-
         if account_id:
             result['account_id'] = account_id
-
         # taxes
         account_obj = self.env['account.account']
         taxes = account_id and account_obj.browse(account_id).tax_ids or False

@@ -17,7 +17,6 @@
             </field>
         </record>
 
-
         <record id="view_invoice_template_line_form" model="ir.ui.view">
             <field name="name">account.invoice.template.line.form</field>
             <field name="model">account.invoice.template.line</field>
